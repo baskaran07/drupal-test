@@ -1,0 +1,49 @@
+uuid: 443ea82c-7a34-4290-b29d-43dd9e3572d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slider
+    - field.field.block_content.slider.body
+    - field.field.block_content.slider.field_hero_tout
+  module:
+    - text
+id: block_content.slider.default
+targetEntityType: block_content
+bundle: slider
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_hero_tout:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

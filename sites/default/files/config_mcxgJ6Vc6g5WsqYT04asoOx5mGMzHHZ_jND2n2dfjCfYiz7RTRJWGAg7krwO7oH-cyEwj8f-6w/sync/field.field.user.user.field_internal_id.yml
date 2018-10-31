@@ -1,0 +1,20 @@
+uuid: 14a19b6a-7686-4170-8edb-944f873d96c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_internal_id
+  module:
+    - user
+id: user.user.field_internal_id
+field_name: field_internal_id
+entity_type: user
+bundle: user
+label: 'Internal ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

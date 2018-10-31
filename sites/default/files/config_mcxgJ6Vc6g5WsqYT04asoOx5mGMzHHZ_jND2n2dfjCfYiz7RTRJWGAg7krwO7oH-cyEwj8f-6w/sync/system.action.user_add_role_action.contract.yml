@@ -1,0 +1,14 @@
+uuid: 37da518d-540a-482f-8cc8-93dbdf6f5ce5
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.contract
+  module:
+    - user
+id: user_add_role_action.contract
+label: 'Add the contract role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: contract

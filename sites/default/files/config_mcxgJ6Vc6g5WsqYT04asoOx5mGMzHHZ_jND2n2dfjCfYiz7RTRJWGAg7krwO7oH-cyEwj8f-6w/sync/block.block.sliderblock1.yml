@@ -1,0 +1,25 @@
+uuid: 2bad8725-8238-41d8-8a98-0dfe475bdffd
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:slider:c64ce426-d3a3-46e9-8531-9dc1c4e53e58'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: sliderblock1
+theme: bartik
+region: footer_fifth
+weight: -7
+provider: null
+plugin: 'block_content:c64ce426-d3a3-46e9-8531-9dc1c4e53e58'
+settings:
+  id: 'block_content:c64ce426-d3a3-46e9-8531-9dc1c4e53e58'
+  label: 'Slider Block 1'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

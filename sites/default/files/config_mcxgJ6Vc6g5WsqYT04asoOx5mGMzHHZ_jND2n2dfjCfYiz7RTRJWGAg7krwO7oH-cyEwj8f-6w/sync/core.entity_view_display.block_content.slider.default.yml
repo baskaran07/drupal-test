@@ -1,0 +1,32 @@
+uuid: c332b849-c9d9-415f-91b7-80d2d3852c01
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slider
+    - field.field.block_content.slider.body
+    - field.field.block_content.slider.field_hero_tout
+  module:
+    - block_formatter
+    - text
+id: block_content.slider.default
+targetEntityType: block_content
+bundle: slider
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hero_tout:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: block_field_formatter
+    region: content
+hidden:
+  langcode: true

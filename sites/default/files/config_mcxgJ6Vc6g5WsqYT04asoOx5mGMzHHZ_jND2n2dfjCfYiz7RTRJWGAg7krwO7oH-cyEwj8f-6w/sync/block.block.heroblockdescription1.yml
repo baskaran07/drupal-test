@@ -1,0 +1,25 @@
+uuid: 8604cc3a-12c5-477c-8db4-8a1dd07c1ef0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:hero_block:853fad2a-25b2-453e-ba2e-153497aa681c'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: heroblockdescription1
+theme: bartik
+region: footer_fifth
+weight: -10
+provider: null
+plugin: 'block_content:853fad2a-25b2-453e-ba2e-153497aa681c'
+settings:
+  id: 'block_content:853fad2a-25b2-453e-ba2e-153497aa681c'
+  label: 'Hero Block description 1'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

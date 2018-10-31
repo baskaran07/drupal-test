@@ -1,0 +1,14 @@
+uuid: 7286fccd-cdac-41a0-8387-685caf11a780
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.contract
+  module:
+    - user
+id: user_remove_role_action.contract
+label: 'Remove the contract role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: contract

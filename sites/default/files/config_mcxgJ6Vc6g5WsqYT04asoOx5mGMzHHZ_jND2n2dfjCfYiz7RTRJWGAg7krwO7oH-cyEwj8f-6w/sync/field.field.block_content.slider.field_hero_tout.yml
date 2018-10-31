@@ -1,0 +1,28 @@
+uuid: 7c9a6d78-5e1e-41d6-8f01-24af83187a45
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero_block
+    - block_content.type.slider
+    - field.storage.block_content.field_hero_tout
+id: block_content.slider.field_hero_tout
+field_name: field_hero_tout
+entity_type: block_content
+bundle: slider
+label: 'Hero Tout'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      hero_block: hero_block
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

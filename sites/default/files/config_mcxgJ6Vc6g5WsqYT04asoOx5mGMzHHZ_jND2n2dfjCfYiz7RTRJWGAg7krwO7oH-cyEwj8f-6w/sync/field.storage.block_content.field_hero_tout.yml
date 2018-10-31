@@ -1,0 +1,19 @@
+uuid: 23fe9785-6f61-4786-af68-8be262fbf5c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_hero_tout
+field_name: field_hero_tout
+entity_type: block_content
+type: entity_reference
+settings:
+  target_type: block_content
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

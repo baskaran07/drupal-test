@@ -1,0 +1,10 @@
+uuid: 1477e704-465b-4164-a461-c45007a2aaa4
+langcode: en
+status: true
+dependencies: {  }
+id: contract
+label: contract
+weight: 3
+is_admin: null
+permissions:
+  - 'access toolbar'

@@ -3,6 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_employee_id
+    - field.field.user.user.field_internal_id
+    - field.field.user.user.field_migrate_example_favbeers
+    - field.field.user.user.field_migrate_example_gender
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -21,6 +25,22 @@ content:
   contact:
     weight: 5
     region: content
+  field_employee_id:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_internal_id:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   language:
     weight: 0
     region: content
@@ -36,4 +56,6 @@ content:
     weight: -1
     region: content
 hidden:
+  field_migrate_example_favbeers: true
+  field_migrate_example_gender: true
   langcode: true

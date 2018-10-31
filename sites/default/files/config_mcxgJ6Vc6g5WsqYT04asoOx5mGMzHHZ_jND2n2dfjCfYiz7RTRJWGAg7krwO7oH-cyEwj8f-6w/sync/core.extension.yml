@@ -7,6 +7,7 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
+  block_formatter: 0
   bluehornet: 0
   breakpoint: 0
   ckeditor: 0
@@ -27,6 +28,7 @@ module:
   dynamic_page_cache: 0
   editor: 0
   encrypt: 0
+  entity_reference: 0
   entity_reference_revisions: 0
   et_newsletter: 0
   examples: 0
@@ -34,18 +36,20 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  google_tag: 0
   hal: 0
   hello_world: 0
   help: 0
   history: 0
+  hub_user_import: 0
   image: 0
-  jsonlog: 0
   key: 0
   kint: 0
   language: 0
   learning: 0
   link: 0
   locale: 0
+  media: 0
   menu_ui: 0
   migrate: 0
   migrate_drupal: 0
@@ -77,6 +81,7 @@ module:
   toolbar: 0
   tour: 0
   user: 0
+  views_field_formatter: 0
   views_ui: 0
   menu_link_content: 1
   content_translation: 10
