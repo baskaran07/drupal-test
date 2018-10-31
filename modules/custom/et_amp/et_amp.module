@@ -1,0 +1,48 @@
+<?php
+
+use Drupal\Component\Utility\UrlHelper;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\node\NodeInterface;
+
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function et_amp_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Disable AMP specific "optimized" UIs.
+  $form['actions']['save_view_amp']['#access'] = FALSE;
+  $form['actions']['save_view_amp_with_warn']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function et_amp_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  // Check if entity is a non-new node in either full or AMP view mode.
+  /** @var NodeInterface $entity */
+  if ($entity instanceof NodeInterface && !$entity->isNew() && in_array($build['#view_mode'], ['full', 'amp'])) {
+    // Get a list of available view modes for the current entity.
+    $view_modes = \Drupal::service('entity_display.repository')->getViewModeOptionsByBundle('node', $entity->bundle());
+    // Double-check that the AMP view mode is enabled for this node type.
+    if (isset($view_modes['amp'])) {
+      $build['#cache']['contexts'][] = 'url.query_args:amp';
+
+      if (!empty($build['#attached']['html_head_link'])) {
+        foreach ($build['#attached']['html_head_link'] as $key => $config) {
+          if ($build['#view_mode'] === 'full') {
+
+            if ($config[0]['rel'] === 'amphtml') {
+              $absolute_canonical = $entity->toUrl('canonical', ['absolute' => TRUE])->toString();
+              $amp_href = \Drupal::service('amp.query_parameters')->add($absolute_canonical);
+              $amp_href = str_replace('http://', 'https://', $amp_href);
+              $build['#attached']['html_head_link'][$key][0]['href'] = $amp_href;
+              break;
+            }
+          }
+        }
+      }
+    }
+  }
+}

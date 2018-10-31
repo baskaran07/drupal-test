@@ -1,0 +1,31 @@
+uuid: d94932e0-2efd-4d71-927c-d91e0ad96e0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.contact_forms_example
+    - field.field.contact_message.contact_forms_example.field_phone_number
+id: contact_message.contact_forms_example.default
+targetEntityType: contact_message
+bundle: contact_forms_example
+mode: default
+content:
+  field_phone_number:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  message:
+    type: string
+    weight: 0
+    label: above
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  langcode: true

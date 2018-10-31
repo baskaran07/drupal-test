@@ -1,0 +1,5 @@
+entity.bluehornet__campaign.add_form:
+  route_name: entity.bluehornet__campaign.add_form
+  title: 'Add campaign'
+  appears_on:
+    - bluehornet.campaign.listing

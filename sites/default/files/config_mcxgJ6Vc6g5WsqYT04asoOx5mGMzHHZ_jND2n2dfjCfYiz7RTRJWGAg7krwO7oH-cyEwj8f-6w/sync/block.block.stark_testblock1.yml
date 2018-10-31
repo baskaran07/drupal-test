@@ -1,0 +1,25 @@
+uuid: 85c7d02c-cf71-4219-aee2-11e2cdb269e8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a151bfc8-c4e4-476a-8216-b55755c433ba'
+  module:
+    - block_content
+  theme:
+    - stark
+id: stark_testblock1
+theme: stark
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:a151bfc8-c4e4-476a-8216-b55755c433ba'
+settings:
+  id: 'block_content:a151bfc8-c4e4-476a-8216-b55755c433ba'
+  label: 'test block1'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

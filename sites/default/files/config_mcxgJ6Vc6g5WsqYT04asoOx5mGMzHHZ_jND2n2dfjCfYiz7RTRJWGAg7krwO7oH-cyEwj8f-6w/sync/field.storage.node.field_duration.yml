@@ -1,0 +1,20 @@
+uuid: 044d19e2-c7ea-4aea-88d9-ba5ecabc73df
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - node
+id: node.field_duration
+field_name: field_duration
+entity_type: node
+type: daterange
+settings:
+  datetime_type: datetime
+module: datetime_range
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,25 @@
+uuid: 0fecc9ef-aff1-4d14-96fc-8b406ed8bf62
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a151bfc8-c4e4-476a-8216-b55755c433ba'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: testblock1
+theme: bartik
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:a151bfc8-c4e4-476a-8216-b55755c433ba'
+settings:
+  id: 'block_content:a151bfc8-c4e4-476a-8216-b55755c433ba'
+  label: 'test block1'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

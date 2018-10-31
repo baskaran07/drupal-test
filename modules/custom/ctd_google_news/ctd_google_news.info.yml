@@ -1,0 +1,7 @@
+name: CTD Google News
+core: 8.x
+description: Custom news sitemap for Google news to use.
+package: CTD
+type: module
+dependencies:
+  - simple_sitemap

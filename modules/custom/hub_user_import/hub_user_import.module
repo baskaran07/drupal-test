@@ -1,0 +1,14 @@
+<?php
+
+function hub_user_import_preprocess_menu__toolbar(&$variables) {
+  //kint($variables);exit;
+}
+
+
+
+function hub_user_import_preprocess_links__toolbar_user(&$variables) {
+  if(!in_array('administrator', $variables['user']->getRoles())) {
+   unset($variables['links']['account']);
+    unset($variables['links']['account_edit']);
+  }
+}

@@ -1,0 +1,7 @@
+services:
+  ctd_google_news.generator:
+    class: Drupal\ctd_google_news\NewsSitemapGenerator
+    public: true
+    arguments:
+      - '@config.factory'
+      - '@file_system'

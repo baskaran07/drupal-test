@@ -1,0 +1,5 @@
+name: Learning
+description: This module is for learning purpose
+type: module
+core: 8.x
+package: Learning

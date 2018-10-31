@@ -1,0 +1,25 @@
+uuid: ab683fbf-afad-4d72-938f-73e04dc0787f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:example_my_block_type:8e56af76-b55c-4460-91a2-d71c22b91337'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: myblocktype
+theme: bartik
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:8e56af76-b55c-4460-91a2-d71c22b91337'
+settings:
+  id: 'block_content:8e56af76-b55c-4460-91a2-d71c22b91337'
+  label: 'my block type'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

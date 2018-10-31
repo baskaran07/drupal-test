@@ -1,0 +1,45 @@
+learning.simple:
+  path: /learning-page
+  defaults:
+    _controller: \Drupal\learning\Controller\LearningPageController::simple
+    _title: 'Learning Sample page'
+  requirements:
+    _permission: 'access content'
+    
+learning.simple-form:
+  path: /learning-page-form
+  defaults:
+    _form: '\Drupal\learning\Form\EnquiryForm'
+    _title: 'Learning Enquire Form page'
+  requirements:
+    _permission: 'access enquire form'
+ 
+learning.admin-settings-form:
+  path: '/admin/config/learning/adminsettings'
+  defaults:
+    _form: '\Drupal\learning\Form\MessagesForm'
+    _title: 'Learning Enquire Form page'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+learning.enquire-admin-settings-form:
+  path: '/admin/config/content/enquiresettings'
+  defaults:
+    _form: '\Drupal\learning\Form\EnquiryAdminForm'
+    _title: 'Enquire Admin settings page'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+  
+learning.enquire-list:
+  path: /admin/config/content/enquirelist
+  defaults:
+    _controller: \Drupal\learning\Controller\EnquiryListController::load
+    _title: 'Enquire List page'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

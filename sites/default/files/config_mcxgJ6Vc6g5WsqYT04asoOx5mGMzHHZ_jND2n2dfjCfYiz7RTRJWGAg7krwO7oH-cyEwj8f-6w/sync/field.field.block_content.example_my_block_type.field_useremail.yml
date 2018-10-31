@@ -1,0 +1,19 @@
+uuid: 5d8f4ddd-794f-4472-be65-f2094cd0efa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.example_my_block_type
+    - field.storage.block_content.field_useremail
+id: block_content.example_my_block_type.field_useremail
+field_name: field_useremail
+entity_type: block_content
+bundle: example_my_block_type
+label: Useremail
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

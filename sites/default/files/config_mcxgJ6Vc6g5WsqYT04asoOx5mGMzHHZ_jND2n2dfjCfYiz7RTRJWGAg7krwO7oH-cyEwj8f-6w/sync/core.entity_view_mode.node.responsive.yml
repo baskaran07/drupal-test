@@ -1,0 +1,10 @@
+uuid: 3b4b637e-c619-4cb5-9e3d-f9f312a873dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.responsive
+label: Responsive
+targetEntityType: node
+cache: true

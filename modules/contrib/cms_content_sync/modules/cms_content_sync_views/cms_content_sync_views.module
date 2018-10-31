@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Module file for cms_content_sync_views.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function cms_content_sync_views_entity_base_field_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+
+  // Add the dynamic entity reference field to the entity status entity type.
+  if ($entity_type->id() === 'cms_content_sync_entity_status') {
+    $fields['entity'] = BaseFieldDefinition::create('dynamic_entity_reference')
+      ->setLabel(t('Entity'))
+      ->setDescription(t('Reference to the entity.'))
+      ->setCardinality(1)
+      ->setReadOnly(TRUE);
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function cms_content_sync_views_entity_update(EntityInterface $entity) {
+  if ($entity instanceof FieldableEntityInterface) {
+
+    // Set the referenced entity for the entity status entity.
+    if ($entity->getEntityTypeId() == 'cms_content_sync_entity_status' && is_null($entity->get('entity')->target_id)) {
+      $synced_entity = \Drupal::service('entity.repository')->loadEntityByUuid($entity->get('entity_type')->value, $entity->get('entity_uuid')->value);
+      $entity->set('entity', $synced_entity);
+      $entity->save();
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Install file for cms_content_sync_developer.
+ */
+
+/**
+ * Implements hook_unstall()
+ */
+function cms_content_sync_developer_uninstall() {
+  // Delete developer settings.
+  Drupal::configFactory()->getEditable('cms_content_sync.developer')->delete();
+}

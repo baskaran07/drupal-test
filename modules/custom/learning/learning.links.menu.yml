@@ -1,0 +1,13 @@
+learning.enquiry_admin:
+  title: 'Enquiry Form settings'
+  description: 'Manage enquiry form settings for your site'
+  parent: system.admin_config_content
+  route_name: learning.enquire-admin-settings-form
+  weight: 100
+  
+learning.enquiry_list:
+  title: 'Enquiry List'
+  description: 'It will show enquiry list'
+  parent: system.admin_config_content
+  route_name: learning.enquire-list
+  weight: 99

@@ -1,0 +1,10 @@
+{
+    "name": "drupal/bluehornet",
+    "type": "drupal-module",
+    "description": "TODO",
+    "license": "GPL-2.0+",
+    "require": {
+        "cbstvd/php-bluehornet": "1.0.4"
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,79 @@
+<?php
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_node_update
+ * @param EntityInterface $entity
+ */
+function ctd_google_news_node_update(EntityInterface $entity) {
+  $allowed_types = \Drupal::config('ctd_google_news.settings')->get('content_type_list');
+  if (in_array($entity->bundle(), $allowed_types, true)) {
+    // Generate sitemap if the article goes from a state of unpublished to
+    // published.
+    print 'working';
+    if ($entity->isPublished() == true) {
+      $generator = \Drupal::service('ctd_google_news.generator');
+      // Pass in $node to be included in sitemap
+      $generator->generateSitemapIndex($entity);
+      // Let Google know that the Google News Sitemap has updated.
+      $generator->pingGoogle();
+    }
+  }
+}
+
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function ctd_google_news_page_attachments_alter(array &$attachments) {
+$allowed_types = \Drupal::config('ctd_google_news.settings')->get('content_type_list');
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    if (in_array($entity->bundle(), $allowed_types, true)) {
+      // get the default keywords
+      $generator = \Drupal::service('ctd_google_news.generator');
+      $keywords = explode(",", $generator->getSetting('default_keywords', 'Entertainment,Celebrities'));
+      array_walk($attachments['#attached']['html_head'], function (&$item) use (&$keywords) {
+        // get the current article's keywords
+        if (is_array($item) && (isset($item[1]) && $item[1] === 'keywords')){
+          // combine the default keywords with the current node's keywords to render in metatag
+          $current_node_keywords = array_filter(explode(",", $item[0]['#attributes']['content']));
+          $keywords = array_unique(array_map('trim', array_merge($keywords, $current_node_keywords)));
+          $item[0]['#attributes']['content'] = implode(', ', $keywords);
+        }
+      });
+
+      // create a new news_keywords metatags, using 10 terms from the keywords metatag
+      // 10 is maximum amount of terms allowed by Google News for news_keywords metatag
+      $news_keywords = [
+        '#tag' => 'meta',
+        '#attributes' => [
+          'name' => 'news_keywords',
+          'content' => implode(', ', array_slice($keywords, 0, 10) ),
+        ],
+      ];
+      $attachments['#attached']['html_head'][] = [$news_keywords, 'news_keywords'];
+    }
+  }
+}
+
+/**
+ * @param EntityInterface $entity
+ */
+function ctd_google_news_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+$allowed_types = \Drupal::config('ctd_google_news.settings')->get('content_type_list');
+  if (in_array($entity->bundle(), $allowed_types, true)) {
+    // Check to see if title has changed, node has been published, and field_publish_date_display
+    // has a value.
+    if (!empty($entity->original) &&
+        $entity->isPublished() &&
+        // et_article is already updating the publish date on publish.
+        !($entity->original->isPublished() == false && $entity->isPublished() == true) &&
+        $entity->hasField('field_publish_date_display') &&
+        $entity->hasField('field_allow_display_date_update') &&
+        $entity->get('field_allow_display_date_update')->value == 'yes')
+    {
+      // If title has changed, update display date.
+      $entity->get('field_publish_date_display')->value = gmdate(DATETIME_DATETIME_STORAGE_FORMAT, $entity->getChangedTime());
+    }
+  }
+}

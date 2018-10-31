@@ -1,0 +1,24 @@
+uuid: efe32c51-1a31-4676-aa62-024d0171e2d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_type_2.field_dob
+    - paragraphs.paragraphs_type.paragraph_type_2
+  module:
+    - datetime
+id: paragraph.paragraph_type_2.default
+targetEntityType: paragraph
+bundle: paragraph_type_2
+mode: default
+content:
+  field_dob:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

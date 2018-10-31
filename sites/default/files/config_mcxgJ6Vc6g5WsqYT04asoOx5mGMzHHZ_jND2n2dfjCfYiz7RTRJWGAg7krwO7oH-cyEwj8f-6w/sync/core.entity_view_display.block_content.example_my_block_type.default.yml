@@ -1,0 +1,25 @@
+uuid: d1e5e9fc-b006-49f7-886f-64b9a359bda0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.example_my_block_type
+    - field.field.block_content.example_my_block_type.body
+    - field.field.block_content.example_my_block_type.field_useremail
+  module:
+    - text
+id: block_content.example_my_block_type.default
+targetEntityType: block_content
+bundle: example_my_block_type
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_useremail: true
+  langcode: true

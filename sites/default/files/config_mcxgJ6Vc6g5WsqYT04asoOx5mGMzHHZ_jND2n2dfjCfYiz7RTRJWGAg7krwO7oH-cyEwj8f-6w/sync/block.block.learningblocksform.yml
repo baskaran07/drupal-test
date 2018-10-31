@@ -1,0 +1,20 @@
+uuid: ca30a227-24ae-45c0-a8b9-bf01b58a703d
+langcode: en
+status: true
+dependencies:
+  module:
+    - learning
+  theme:
+    - bartik
+id: learningblocksform
+theme: bartik
+region: sidebar_first
+weight: -8
+provider: null
+plugin: learn_block_form
+settings:
+  id: learn_block_form
+  label: 'Learning Blocks Form'
+  provider: learning
+  label_display: '0'
+visibility: {  }

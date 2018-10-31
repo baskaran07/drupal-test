@@ -1,0 +1,9 @@
+services:
+  hub_user_import:
+    class: '\Drupal\hub_user_import\EventSubscriber\RedirectAnonymousSubscriber'
+    tags:
+      - { name: 'event_subscriber' }
+  hub_user.route_subscriber:
+    class: Drupal\hub_user_import\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

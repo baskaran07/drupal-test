@@ -1,0 +1,6 @@
+services:
+  et_amp.event_subscriber.disable_newrelic:
+    class: \Drupal\et_amp\EventSubscriber\DisableNewRelic
+    arguments: ['@router.amp_context']
+    tags:
+      - { name: event_subscriber }

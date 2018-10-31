@@ -1,0 +1,7 @@
+form:
+  js:
+    js/et_newsletter.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.ajax

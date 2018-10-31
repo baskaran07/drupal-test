@@ -1,0 +1,45 @@
+uuid: b54c8275-2e3e-4652-9dca-da789460e6a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_type.field_email
+    - field.field.paragraph.paragraph_type.field_name
+    - field.field.paragraph.paragraph_type.field_profile_picture
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.paragraph_type
+  module:
+    - image
+id: paragraph.paragraph_type.default
+targetEntityType: paragraph
+bundle: paragraph_type
+mode: default
+content:
+  field_email:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_profile_picture:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

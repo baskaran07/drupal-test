@@ -1,0 +1,6 @@
+entity.cms_content_sync:
+  title: 'CMS Content Sync'
+  route_name: entity.cms_content_sync.introduction
+  parent: system.admin_config_services
+  description: 'Synchronizations description'
+  weight: 100

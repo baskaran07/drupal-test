@@ -1,0 +1,11 @@
+services:
+  learning.get_nodes:
+    class: \Drupal\learning\NodesService
+
+  theme.negotiator.learning:
+    class: Drupal\learning\Theme\ThemeNegotiator
+    tags:
+      - { name: theme_negotiator, priority: 0 }
+
+  learning.enquiry:
+    class: Drupal\learning\EnquiryService

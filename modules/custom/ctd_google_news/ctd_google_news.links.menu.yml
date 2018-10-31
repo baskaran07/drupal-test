@@ -1,0 +1,5 @@
+ctd_google_news.settings:
+  title: 'News Sitemap'
+  parent: 'system.admin_config_search'
+  description: 'News Sitemap Settings'
+  route_name: 'ctd_google_news.settings'

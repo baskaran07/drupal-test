@@ -1,0 +1,12 @@
+services:
+  bluehornet.client:
+    class: \Dawehner\Bluehornet\Client
+    factory: bluehornet.client_factory:create
+
+  bluehornet.client_factory:
+    class: \Drupal\bluehornet\ClientFactory
+    arguments: ['@http_client']
+
+  bluehornet.sender:
+    class: \Drupal\bluehornet\BluehornetSender
+    arguments: ['@bluehornet.client']

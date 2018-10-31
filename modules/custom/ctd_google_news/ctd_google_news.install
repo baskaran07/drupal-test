@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function ctd_google_news_install() {
+  $base_url = $GLOBALS['base_url'];
+  $fs = \Drupal::service('file_system');
+  if ($fs->realpath('public://sitemaps')) {
+    if (!$fs->mkdir('public://sitemaps', NULL)) {
+      drupal_set_message(t('We were unable to install the news sitemap module due to not being able to create the sitemaps folder. Please check your file permissions and try again.'));
+    } else {
+      drupal_set_message(t('You can now generate a news sitemap by going to <a href=\'@config_url\'>the module\'s configuration pages</a>.', ['@config_url' => "$base_url/admin/config/search/newssitemap"]));
+    }
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ctd_google_news_uninstall() {
+  $fs = \Drupal::service('file_system');
+  if ($fs->realpath('public://sitemaps')) {
+    $fs->rmdir('public://sitemaps');
+  }
+}

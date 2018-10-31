@@ -1,0 +1,8 @@
+uuid: ff70a670-14df-406a-be87-3a242c79cc94
+langcode: en
+status: true
+dependencies: {  }
+id: example_my_block_type
+label: 'Example my block type'
+revision: 0
+description: ''

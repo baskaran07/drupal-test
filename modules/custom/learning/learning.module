@@ -1,0 +1,103 @@
+<?php
+
+/**
+ * @file
+ * Module file for learning.
+ */
+ 
+ use Drupal\Core\Form\FormStateInterface;
+ use Symfony\Component\HttpFoundation\RedirectResponse;
+ 
+/**
+ * Implements hook_theme().
+ */
+
+function learning_theme() {
+  return [
+    'youtube_link_formatter' => [
+      'variables' => ['data' => []],
+      'template' => 'youtube-link-formatter',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function learning_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+//kint(\Drupal::config('learning.settings')->get('enquiry_form_content_type_list'));exit;
+$node = $form_state->getFormObject()->getEntity();
+$allowed_types = \Drupal::config('learning.settings')->get('enquiry_form_content_type_list');
+//print_r(\Drupal::config('learning.settings')->get('enquiry_form_content_type_list'));
+//print_r($node->getType());
+
+  // @TODO: Add your own logic for filtering relevant node forms
+  if (in_array($node->getType(), $allowed_types, true)) {
+    $form['enquiry'] = array(
+      '#type' => 'details',
+      '#title' => t('Enable Enquiry Form'),
+      '#description' => t('Enable Enquiry Forms'),
+      '#group' => 'advanced',
+      '#weight' => 1000,
+    );
+    $form['enquiry']['enquiry-form-enabled'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Enable Enquire form this particular page'),
+      '#default_value' => !empty(\Drupal::service("learning.enquiry")->select($node->id())) ? 1 : 0,
+    );
+  foreach (array_keys($form['actions']) as $action) {
+    if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+      $form['actions'][$action]['#submit'][] = 'enquiry_form_submit';
+    }
+  }
+  }
+}
+/**
+ * Custom form handler.
+ */
+function enquiry_form_submit(array $form, FormStateInterface $form_state) {
+  $nid = $form_state->getFormObject()->getEntity()->id();
+  $fields = array('nid' => $nid);
+
+
+  if ($form_state->getValue('enquiry-form-enabled')) {
+    $result = \Drupal::service("learning.enquiry")->select($nid);
+    if (empty($result)) {
+      \Drupal::service("learning.enquiry")->insert($nid);
+    }
+  }
+  else {
+    \Drupal::service("learning.enquiry")->delete($nid);
+  }
+}
+
+function learning_user_login($account) {
+  // We want to redirect user on login.
+  $response = new RedirectResponse("/baskaran");
+  $response->send();
+  return;
+}
+/**
+function learning_preprocess_page(&$variables) {
+
+  if (\Drupal::currentUser()->isAnonymous()) {
+    // Anonymous user...
+    $current_uri = \Drupal::request()->getRequestUri();
+    $path_arguments = explode('/' , $current_uri);
+    //print_r($path_arguments);exit;
+    if ($path_arguments[1] == 'hub') {
+    //exit;
+      //return new RedirectResponse("/user/login");
+    //throw new AccessDeniedHttpException();
+     //print 'here';exit;
+    // $url = Url::fromRoute('system.403');
+    //$response = new RedirectResponse($url->toString());
+    //$path = URL::fromUserInput('/user/login');
+    //return new RedirectResponse($path);
+      $response = new RedirectResponse("/user/login", 301);
+      $response->send();
+      return;
+    }
+  }
+}
+*/

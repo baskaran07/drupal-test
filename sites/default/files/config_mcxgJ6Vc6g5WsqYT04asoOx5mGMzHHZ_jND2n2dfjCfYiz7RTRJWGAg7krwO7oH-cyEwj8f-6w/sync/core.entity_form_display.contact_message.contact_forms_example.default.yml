@@ -1,0 +1,55 @@
+uuid: c1051679-96d7-431f-9e5f-a2810b8f88b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.contact_forms_example
+    - field.field.contact_message.contact_forms_example.field_phone_number
+id: contact_message.contact_forms_example.default
+targetEntityType: contact_message
+bundle: contact_forms_example
+mode: default
+content:
+  copy:
+    weight: 50
+    region: content
+  field_phone_number:
+    weight: 51
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  mail:
+    weight: -40
+    region: content
+  message:
+    type: string_textarea
+    weight: 0
+    settings:
+      rows: 12
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  name:
+    weight: -50
+    region: content
+  preview:
+    weight: 40
+    region: content
+  subject:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,60 @@
+uuid: 2db882c1-63f1-44eb-81bd-686f373f083d
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_example_advanced
+_core:
+  default_config_hash: Z3MYobhfuQ6AbR6lI1Pt9uRIgk_2fj0MeOVaVhN1BoY
+id: wine_variety_multi_xml
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: wine
+label: 'XML feed of varieties'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: xml
+  urls:
+    - 'http://drupal-tpgitbas07177694.codeanyapp.com/migrate_example_advanced_variety_multiple/red?_format=xml'
+    - 'http://drupal-tpgitbas07177694.codeanyapp.com/migrate_example_advanced_variety_multiple/white?_format=xml'
+  item_selector: /response/variety
+  fields:
+    -
+      name: category_name
+      label: Name
+      selector: name
+    -
+      name: category_details
+      label: Details
+      selector: details
+    -
+      name: category_parent
+      label: 'Unique position identifier'
+      selector: parent
+    -
+      name: category_attributes
+      label: 'List of variety attributes'
+      selector: attributes
+  ids:
+    category_name:
+      type: string
+process:
+  vid:
+    plugin: default_value
+    default_value: migrate_example_wine_varieties
+  name: category_name
+  description: category_details
+  parent:
+    plugin: migration_lookup
+    migration: wine_terms
+    source: category_parent
+  field_variety_attributes: category_attributes
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies:
+  required:
+    - wine_terms

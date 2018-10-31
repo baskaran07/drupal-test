@@ -1,0 +1,36 @@
+uuid: 368e5661-0356-4566-bc08-b9518c6e40f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphcontainer
+    - node.type.article
+    - paragraphs.paragraphs_type.paragraph_type
+    - paragraphs.paragraphs_type.paragraph_type_2
+  module:
+    - entity_reference_revisions
+id: node.article.field_paragraphcontainer
+field_name: field_paragraphcontainer
+entity_type: node
+bundle: article
+label: 'Paragraph Container'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      paragraph_type: paragraph_type
+      paragraph_type_2: paragraph_type_2
+    target_bundles_drag_drop:
+      paragraph_type:
+        enabled: true
+        weight: 2
+      paragraph_type_2:
+        enabled: true
+        weight: 4
+field_type: entity_reference_revisions

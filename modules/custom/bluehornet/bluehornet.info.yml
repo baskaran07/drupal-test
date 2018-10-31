@@ -1,0 +1,8 @@
+name: Bluehornet
+core: 8.x
+description: Provides integration with Bluehornet API for Newsletter sign up functionality.
+package: ET Integration
+type: module
+
+dependencies:
+  - datetime

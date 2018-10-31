@@ -1,0 +1,11 @@
+uuid: 73af101f-583a-4a0c-b0a0-ab5c3f1f24f8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: EtlAQvGtTNN6MaeLyMkoK4gCOyQxe2cMD4rblLAzoyY
+name: 'Migrate Example Wine Regions'
+vid: migrate_example_wine_regions
+description: 'Wine regions'
+hierarchy: 0
+weight: 0

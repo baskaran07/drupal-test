@@ -1,0 +1,9 @@
+uuid: 55696418-37eb-4bb5-93d1-b70813feeba0
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph_type
+label: 'Paragraph type 1'
+icon_uuid: null
+description: 'Paragraph type description'
+behavior_plugins: {  }

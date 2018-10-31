@@ -1,0 +1,21 @@
+uuid: 50befd84-e1f8-48e9-94e3-326ae4e39622
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_duration
+    - node.type.article
+  module:
+    - datetime_range
+id: node.article.field_duration
+field_name: field_duration
+entity_type: node
+bundle: article
+label: Duration
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

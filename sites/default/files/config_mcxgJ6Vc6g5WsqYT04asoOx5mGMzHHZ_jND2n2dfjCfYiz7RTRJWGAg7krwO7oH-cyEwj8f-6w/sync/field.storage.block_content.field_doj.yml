@@ -1,0 +1,20 @@
+uuid: 7c713268-f29b-4642-a665-53a8a2922a2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - datetime
+id: block_content.field_doj
+field_name: field_doj
+entity_type: block_content
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

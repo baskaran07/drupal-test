@@ -1,0 +1,7 @@
+bluehornet.campaign.listing:
+  path: '/admin/bluehornet__campaign'
+  defaults:
+    _entity_list: 'bluehornet__campaign'
+    _title: 'Campaigns'
+  requirements:
+    _permission: 'bluehornet__campaign'

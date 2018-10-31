@@ -1,0 +1,22 @@
+uuid: faac7f6b-8c55-448b-a523-9cb49772c846
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.gallery
+  module:
+    - text
+id: node.gallery.body
+field_name: body
+entity_type: node
+bundle: gallery
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

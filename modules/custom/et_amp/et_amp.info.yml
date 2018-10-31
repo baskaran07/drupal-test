@@ -1,0 +1,6 @@
+name: ET AMP
+core: 8.x
+description: Provides customizations for ET's AMP implementation.
+package: ET
+type: module
+

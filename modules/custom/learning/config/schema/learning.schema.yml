@@ -1,0 +1,11 @@
+# Schema for the configuration file of learning module.
+
+learning.settings:
+  type: mapping
+  label: 'Learning'
+  mapping:
+    enquiry_form_content_type_list:
+      type: sequence
+      label: 'Content types Enquiry Form can display on'
+
+     

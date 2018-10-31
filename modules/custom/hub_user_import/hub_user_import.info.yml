@@ -1,0 +1,5 @@
+name: Hub User Import
+description: This module is for import users from CSV.
+type: module
+core: 8.x
+package: Custom

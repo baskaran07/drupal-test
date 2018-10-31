@@ -1,0 +1,24 @@
+uuid: 15d9460b-c254-4451-84bb-34ae212f2a69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_type_2.field_dob
+    - paragraphs.paragraphs_type.paragraph_type_2
+  module:
+    - datetime
+id: paragraph.paragraph_type_2.default
+targetEntityType: paragraph
+bundle: paragraph_type_2
+mode: default
+content:
+  field_dob:
+    weight: 0
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden: {  }

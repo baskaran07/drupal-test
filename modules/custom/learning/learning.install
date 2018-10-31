@@ -1,0 +1,88 @@
+<?php
+
+/**
+* Implements hook_install().
+*
+* Creates some default entries on this module custom table.
+*
+* @see hook_install()
+*
+* @ingroup learning
+*/
+
+function learning_install() {
+
+}
+
+/**
+* Implements hook_schema().
+*
+* Defines the database tables used by this module.
+*
+* @see hook_schema()
+*
+* @ingroup learning
+*/
+
+function learning_schema() {
+  $schema['enquiry_list'] = array(
+    'description' => 'Stores the information of enquiry lists.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique person ID.',
+      ),
+      'uid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "Creator user's {users}.uid",
+      ),
+      'nid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Current page nid',
+      ),
+      'mail' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Surname of the person.',
+      ),
+     'created' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "created time of enquiry list",
+      ),
+    ),
+    'primary key' => array('id'),
+    'indexes' => array(
+      'mail' => array('mail'),
+      'nid' => array('nid'),
+      'uid' => array('uid'),
+      'created' => array('created'),
+    ),
+  );
+  
+  $schema['enquiry_enabled'] = array(
+    'description' => 'Stores the information of enquiry lists.',
+    'fields' => array(
+      'nid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Current page nid',
+      ),
+    ),
+    'primary key' => array('nid'),
+    'indexes' => array(
+      'nid' => array('nid'),
+    ),
+  );
+
+  return $schema;
+}

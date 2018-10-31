@@ -1,0 +1,12 @@
+uuid: cf6cbb91-1a39-4703-8836-3b895ae980af
+langcode: en
+status: true
+dependencies: {  }
+id: contact_forms_example
+label: 'Contact forms example'
+recipients:
+  - test@test.com
+reply: ''
+weight: 0
+message: 'thanks for visiting us. Form is submitted.'
+redirect: /contact/contact_forms_example

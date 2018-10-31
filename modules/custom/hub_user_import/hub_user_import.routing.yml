@@ -1,0 +1,7 @@
+hub_user_import:
+  path: '/hub-import-users'
+  defaults:
+    _controller: '\Drupal\hub_user_import\Controller\HubUserImportController::createusers'
+    _title: 'Simple - no arguments'
+  requirements:
+    _permission: 'access content'

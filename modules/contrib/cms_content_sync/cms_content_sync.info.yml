@@ -1,0 +1,19 @@
+name: CMS Content Sync
+type: module
+description: Provides an integration with CMS Content Sync.
+package: CMS Content Sync
+# core: 8.x
+configure: entity.cms_content_sync.introduction
+dependencies:
+  - user
+  - rest
+  - serialization
+  - encrypt
+  - real_aes
+  - menu_link_content
+
+# Information added by Drupal.org packaging script on 2018-08-20
+version: '8.x-1.6'
+core: '8.x'
+project: 'cms_content_sync'
+datestamp: 1534775890

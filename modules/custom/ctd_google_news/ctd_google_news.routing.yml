@@ -1,0 +1,17 @@
+ctd_google_news.settings:
+  path: '/admin/config/search/newssitemap'
+  defaults:
+    _form: '\Drupal\ctd_google_news\Form\NewsSitemapSettingsForm'
+    _title: 'News Sitemap Settings'
+  requirements:
+    _permission: 'administer sitemap settings'
+
+ctd_google_news.sitemap:
+  path: '/news.xml'
+  defaults:
+    _title: 'News Sitemap'
+    _controller: '\Drupal\ctd_google_news\Controller\SitemapController::index'
+  arguments:
+
+  requirements:
+    _permission: 'access content'

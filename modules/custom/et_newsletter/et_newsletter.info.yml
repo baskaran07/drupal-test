@@ -1,0 +1,7 @@
+name: ET Newsletter
+core: 8.x
+description: Provides a BlueHornet integrated Newsletter sign-up form and block.
+type: module
+package: ET Integration
+dependencies:
+  - bluehornet

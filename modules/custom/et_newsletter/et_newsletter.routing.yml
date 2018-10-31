@@ -1,0 +1,8 @@
+et_newsletter.newsletter:
+  path: '/newsletters'
+  defaults:
+    _form: '\Drupal\et_newsletter\Form\NewsletterPageForm'
+    _title: 'Get the latest news delivered straight to your Inbox'
+  requirements:
+    _access: 'TRUE'
+

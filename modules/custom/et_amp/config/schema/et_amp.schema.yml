@@ -1,0 +1,17 @@
+block.settings.et_amp_google_doubleclick_block:
+  type: block_settings
+  label: 'ET AMP Google DoubleClick for Publishers block'
+  mapping:
+    width:
+      type: integer
+      label: Width
+    height:
+      type: integer
+      label: Height
+    data_slot:
+      type: string
+      label: Data-slot
+    json:
+      typr: string
+      label: JSON
+

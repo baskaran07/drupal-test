@@ -1,0 +1,11 @@
+# Schema for the configuration file of ctd_google_news module.
+
+ctd_google_news.settings:
+  type: mapping
+  label: 'CTD Google News'
+  mapping:
+    content_type_list:
+      type: sequence
+      label: 'Content types google news Form can display on'
+
+     
