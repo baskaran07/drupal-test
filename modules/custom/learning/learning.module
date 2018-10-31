@@ -73,9 +73,9 @@ function enquiry_form_submit(array $form, FormStateInterface $form_state) {
 
 function learning_user_login($account) {
   // We want to redirect user on login.
-  $response = new RedirectResponse("/baskaran");
-  $response->send();
-  return;
+  //$response = new RedirectResponse("/baskaran");
+  //$response->send();
+  //return;
 }
 /**
 function learning_preprocess_page(&$variables) {

@@ -1,9 +1,0 @@
-jsonlog_severity_threshold: 4
-jsonlog_truncate: 64
-jsonlog_siteid: box-codeanywhere__drupal
-jsonlog_canonical: ''
-jsonlog_file_time: Ymd
-jsonlog_dir: /home/cabox/workspace/drupal-log
-jsonlog_tags: ''
-_core:
-  default_config_hash: o9_0kZdKdCmhAuY5-nTV7gs6MQp-y0K2xdyCQKGndAo
